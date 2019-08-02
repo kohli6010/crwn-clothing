@@ -13,8 +13,8 @@ class Shop extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.state.collections.map(({ title, ...items }) => {
-					return <CollectionPreview title={title} {...items} />;
+				{this.state.collections.map(({ id, title, ...items }) => {
+					return <CollectionPreview key={id} title={title} {...items} />;
 				})}
 			</div>
 		);
