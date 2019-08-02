@@ -14,6 +14,11 @@ const Header = () => (
 			<Link to="/shop" className="option">
 				SHOP
 			</Link>
+			{/* 
+				Clothes Link won't work right now,
+				because no route as well component 
+				is created.
+			 */}
 			<Link to="/clothes" className="option">
 				CLOTHES
 			</Link>
