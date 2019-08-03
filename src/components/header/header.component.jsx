@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Logo } from './crown.svg';
+import { ReactComponent as Logo } from '../../assests/crown.svg';
 import './header.styles.scss';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const Header = () => (
 			</Link>
 			{/* 
 				Clothes Link won't work right now,
-				because no route as well component 
+				because no route as well as component 
 				is created.
 			 */}
 			<Link to="/clothes" className="option">
