@@ -21,3 +21,16 @@
     border: 1px solid black;
   }
 }
+
+
+.isGooglesignIn{
+  color: white;
+  background-color:#2669df;
+
+  &:hover{
+    background-color: #003ba0;
+    color: white;
+    border: none;
+  }
+
+}
