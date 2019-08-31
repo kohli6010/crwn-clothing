@@ -12,12 +12,17 @@ const config = {
 	appId: '1:824478283022:web:0982854dbe7bf1b1'
 };
 
+//creating user profile 💯 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
 	if (!userAuth) return;
 
+	// getting the user reference(queryReference) document from user collection 👽 
 	const userRef = firestore.doc(`users/${userAuth.uid}`);
+	
+	// getting a snapshot(querySnapshot) from user reference 👍
 	const snapShot = await userRef.get();
 	
+	// checking if anything exists ❕
 	if (!snapShot.exists) { 
 		const { displayName, email } = userAuth;
 		const createdAt = new Date();

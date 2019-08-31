@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-
 import Homepage from './pages/homepage/homepage.component';
 import Shop from './pages/shop/shop.component';
 import Header from './components/header/header.component';
@@ -19,9 +18,15 @@ class App extends React.Component {
 	unsubscribe = null;
 
 	componentDidMount() {
+		
+		// looking for the changes for Authentication 👩‍🔧
 		this.unsubscribe = auth.onAuthStateChanged(async (user) => {
+
+			// getting a reference query object from firebase 😝
 			const userRef = await createUserProfileDocument(user);
 			if (user) {
+
+				// getting a snapshot object from user reference from firebase 📗
 				userRef.onSnapshot((snapShot) => {
 					this.setState({
 						currentUser: {
@@ -39,6 +44,8 @@ class App extends React.Component {
 	}
 
 	componentWillUnmount() {
+		
+		// will stop data to leak 📢
 		this.unsubscribe();
 	}
 
