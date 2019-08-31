@@ -3,7 +3,7 @@ const INITIAL_STATE = {
 	currentUser: null
 }
 
-// making the reducer for User 👷
+// making the reducer for User 😅
 const userReducer = (state = INITIAL_STATE, action) => { 
 	switch (action.type) { 
 		case 'SET_CURRENT_USER':
