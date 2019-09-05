@@ -1,7 +1,7 @@
-import { combineReducer } from 'redux';
+import { combineReducers } from 'redux';
 import userReducer from './user/user-reducer';
 
 // combining the all reducer to send a giant store after making it 🔆
-export default combineReducer({
+export default combineReducers({
 	user: userReducer
 })
