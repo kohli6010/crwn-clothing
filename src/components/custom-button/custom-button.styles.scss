@@ -13,24 +13,34 @@
   font-weight: bolder;
   border: none;
   cursor: pointer;
-  transition: 220ms ease-in;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
   }
-}
 
-
-.isGooglesignIn{
-  color: white;
-  background-color:#2669df;
-
-  &:hover{
-    background-color: #003ba0;
+  &.google-sign-in {
+    background-color: #4285f4;
     color: white;
-    border: none;
+
+    &:hover {
+      background-color: #357ae8;
+      border: none;
+    }
   }
 
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
+  }
 }
