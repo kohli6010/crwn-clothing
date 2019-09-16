@@ -1,5 +1,9 @@
-const cartActionsType = () => ({ 
+export const cartActionTypes = () => ({ 
 	type: 'TOGGLE_CART',
 })
 
-export default cartActionsType;
+export const addItem = (item) => ({ 
+	type: 'ADD_ITEM',
+	payload: item
+})
+
