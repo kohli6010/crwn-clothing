@@ -1,8 +1,12 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-
+/*
+	Used for all firebase configurations and utilisation methods
+*/
 const config = {
+
+	// needed to in .env file as protected assets
 	apiKey: 'AIzaSyB42qAPmNlJuvkNAYTnlR3m2gwgfjoLYhQ',
 	authDomain: 'crwn-db-cda7b.firebaseapp.com',
 	databaseURL: 'https://crwn-db-cda7b.firebaseio.com',
@@ -12,18 +16,18 @@ const config = {
 	appId: '1:824478283022:web:0982854dbe7bf1b1'
 };
 
-//creating user profile 💯 
+//creating user profile 💯
 export const createUserProfileDocument = async (userAuth, additionalData) => {
 	if (!userAuth) return;
 
-	// getting the user reference(queryReference) document from user collection 👽 
+	// getting the user reference(queryReference) document from user collection👽
 	const userRef = firestore.doc(`users/${userAuth.uid}`);
-	
+
 	// getting a snapshot(querySnapshot) from user reference 👍
 	const snapShot = await userRef.get();
-	
+
 	// checking if anything exists ❕
-	if (!snapShot.exists) { 
+	if (!snapShot.exists) {
 		const { displayName, email } = userAuth;
 		const createdAt = new Date();
 
@@ -34,7 +38,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 				createdAt,
 				...additionalData
 			})
-		} catch (error) { 
+		} catch (error) {
 			console.log(`Erorr occured: ${error}` )
 		}
 	}
