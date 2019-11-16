@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import CartItem from '../cart-item/cartItem.component';
+import { cartActionTypes } from '../../redux/cart/cart.actions';
 import './cart-dropdown.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 
-const CartDropdown = ({ cartItems, history }) => (
+const CartDropdown = ({ cartItems, history, hide }) => (
     <div className='cart-dropdown'>
         <div className='cart-items'>
             {cartItems.length ? (
@@ -17,7 +18,11 @@ const CartDropdown = ({ cartItems, history }) => (
                 <span className='empty-message'>Your cart is empty</span>
             )}
         </div>
-		<CustomButton onClick={() => history.push('/checkout')}>GO TO CHECKOUT</CustomButton>
+        <CustomButton onClick={() => {
+            history.push('/checkout');
+            hide();
+        }}>
+            GO TO CHECKOUT</CustomButton>
     </div>
 );
 
@@ -25,4 +30,8 @@ const mapStateToProps = ({ cart: { cartItems } }) => ({
     cartItems,
 });
 
-export default withRouter(connect(mapStateToProps)(CartDropdown));
+const mapDispatchToProps = dispatch => ({ 
+    hide : () => dispatch(cartActionTypes()) 
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartDropdown));
