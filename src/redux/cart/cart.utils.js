@@ -1,4 +1,4 @@
-import { cartActionTypes } from "./cart.actions";
+// import { cartActionTypes } from "./cart.actions";
 
 export const addItemToCart = (cartItems, cartItemToAdd) => {
 	const existingItem = cartItems.find(cartItem => { 
@@ -15,18 +15,4 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 		})
 	}
 	return [...cartItems, {...cartItemToAdd, quantity: 1}]
-}
-
-export const removeItemFromCart = (cartItems, cartItemToRemove) => { 
-	console.log(cartItems, cartItemToRemove);
-	const newCartItemsArray = cartItems.filter((cartItem, i , cartItems) => { 
-		if (cartItem.id === cartItemToRemove.id) { 
-			cartItems.splice(i, 1);
-			console.log("I am called", cartItems)
-			return cartItems;
-		}
-	})
-
-	console.log(newCartItemsArray);
-	return newCartItemsArray;
 }
