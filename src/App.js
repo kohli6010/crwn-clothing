@@ -28,6 +28,7 @@ class App extends React.Component {
 					});
 				});
 			} else {
+				console.log(this.props.user)
 				this.props.setCurrentUser(user);
 			}
 		});

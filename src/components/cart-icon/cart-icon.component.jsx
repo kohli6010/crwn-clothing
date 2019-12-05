@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {cartActionTypes} from '../../redux/cart/cart.actions';
-import { ReactComponent as ShoppingCart } from '/Users/Rahul/Desktop/crwn-clothing/crwn-clothing/src/assests/shopping-bag.svg';
+import { ReactComponent as ShoppingCart } from '../../assests/shopping-bag.svg';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
 import './cart-icon.styles.scss';

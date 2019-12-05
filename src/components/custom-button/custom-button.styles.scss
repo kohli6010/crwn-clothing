@@ -22,13 +22,14 @@
     border: 1px solid black;
   }
 
-  &.google-sign-in {
+  &.isGoogleSignIn {
     background-color: #4285f4;
     color: white;
 
     &:hover {
-      background-color: #357ae8;
-      border: none;
+      background-color: white;
+      border: 1px solid black;
+      color: black; 
     }
   }
 
